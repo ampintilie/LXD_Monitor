@@ -1,0 +1,18 @@
+# for zabbix lxd commands
+Cmnd_Alias MON_LXC = /etc/zabbix/scripts/lxd_discover_containers.sh, \
+	/etc/zabbix/scripts/lxd_container_memory_usage.sh, \
+	/etc/zabbix/scripts/lxd_container_memory_usage_peak.sh, \
+	/etc/zabbix/scripts/lxd_container_diskspace_usage.sh, \
+	/etc/zabbix/scripts/lxd_container_processes.sh, \
+	/etc/zabbix/scripts/lxd_container_cpu_usage_sec.sh, \
+	/etc/zabbix/scripts/lxd_container_discover_interfaces.sh, \
+	/etc/zabbix/scripts/lxd_container_interface_stats.sh, \
+	/etc/zabbix/scripts/lxd_container_discover_services.sh, \
+	/etc/zabbix/scripts/lxd_container_uptime_service.sh, \
+	/usr/bin/lxc *, /snap/bin/lxc *
+
+Defaults:zabbix !requiretty
+Defaults:zabbix !syslog
+
+zabbix ALL = NOPASSWD: MON_LXC
+
