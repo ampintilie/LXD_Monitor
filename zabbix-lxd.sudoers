@@ -1,14 +1,15 @@
 # for zabbix lxd commands
-Cmnd_Alias MON_LXC = /etc/zabbix/external_scripts_lxd/lxd_discover_containers.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_memory_usage.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_memory_usage_peak.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_diskspace_usage.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_processes.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_cpu_usage_sec.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_discover_interfaces.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_interface_stats.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_discover_services.sh, \
-	/etc/zabbix/external_scripts_lxd/lxd_container_uptime_service.sh, \
+Cmnd_Alias MON_LXC = /etc/zabbix/lxd_external_scripts/lxd_discover_containers.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_memory_usage.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_memory_usage_peak.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_diskspace_usage.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_processes.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_cpu_usage_sec.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_discover_interfaces.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_interface_stats.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_discover_services.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_uptime_service.sh, \
+	/etc/zabbix/lxd_external_scripts/lxd_container_status_service.sh, \
 	/usr/bin/lxc *, /snap/bin/lxc *
 
 Defaults:zabbix !requiretty
