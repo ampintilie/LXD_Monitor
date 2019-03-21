@@ -1,0 +1,35 @@
+#!/bin/bash
+container=`echo $1|awk -F '.' '{print $2}'`
+echo "Container is: $container"
+
+interfaces=`lxc exec $container -- cat /proc/net/dev| grep ":"| sed "s/://" |awk '{print $1}'`
+
+echo "{"
+echo "     \"data\":["
+
+
+
+comma=""
+for interface in $interfaces
+do
+   interface_ip=`lxc info $container | grep $interface |grep -v inet6|grep inet|awk '{print $3}'`
+   rx_bytes=`lxc exec $container -- grep $interface /proc/net/dev | awk '{print $2}'`
+   tx_bytes=`lxc exec $container -- grep $interface /proc/net/dev | awk '{print $10}'`
+   rx_packets=`lxc exec $container -- grep $interface /proc/net/dev | awk '{print $3}'`
+   tx_packets=`lxc exec $container -- grep $interface /proc/net/dev | awk '{print $11}'`
+
+    echo "     $comma{"
+    echo "           \"{#INTERFACE}\":\"$interface\","
+    echo "           \"{#INTERFACE_IP}\":\"$interface_ip\","
+    echo "           \"{#RX_BYTES}\":\"$rx_bytes\","
+    echo "           \"{#TX_BYTES}\":\"$tx_bytes\","
+    echo "           \"{#RX_PACKETS}\":\"$rx_packets\","
+    echo "           \"{#TX_PACKETS}\":\"$tx_packets\""
+    echo "     }"
+    comma=","
+done
+
+
+
+echo "     ]"
+echo "}"
