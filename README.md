@@ -8,6 +8,3 @@ Zabbix template &amp; scripts for LXD container monitoring
 - restart zabbix-agent: systemctl restart zabbix-agent.service
 - import zabbix-templates.xml into zabbix server
 - add template to LXD node
-
-NB: security wise it has to be looked at as well, cause for now the zabbix-agent can execute all lxc commands
-(both for snap package as normal distro package)
