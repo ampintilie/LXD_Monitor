@@ -5,6 +5,7 @@ Zabbix template &amp; scripts for LXD container monitoring
 2. Import templates in Zabbix.
 3. Apply 'LXD NODE' Template to machines. The 'LXD CONTAINER' Template will be appplied automatically to discovered containers.
 
+Note! If discovery doent work, check if /var/lib/zabbix or 'home path' for user zabbix exists and owner is zabbix.
 
 
 
