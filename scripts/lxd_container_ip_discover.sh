@@ -15,7 +15,8 @@ comma=""
 for ip in $ips
 do
     echo "     $comma{"
-    echo "           \"{#IPV4}\":\"$ip\""
+    echo "           \"{#IPV4}\":\"$ip\"",
+    echo "           \"{#CONTAINER}\":\"$1\""
     echo "     }"
     comma=","
 done
