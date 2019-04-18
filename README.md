@@ -6,3 +6,5 @@ Zabbix template &amp; scripts for LXD container monitoring
 3. Apply 'LXD NODE' Template to machines. The 'LXD CONTAINER' Template will be appplied automatically to discovered containers.
 
 Note! If discovery doesnt work, check if /var/lib/zabbix or 'home path' for user zabbix exists and owner is zabbix. Also check if '.config' directory exist in /var/lib/zabbix.
+
+4. Run 'extend_zabbix_ceph_storage_.sh' if you want to add items reagrding storage from ceph. Check 'Ceph_storage_Items' directory for adding items in Zabbix.
